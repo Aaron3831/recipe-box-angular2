@@ -13,7 +13,14 @@ export interface ConfirmModel {
                      <h4 class="modal-title">{{title || 'Confirm'}}</h4>
                    </div>
                    <div class="modal-body">
-                     <p>{{message || 'Are you sure?'}}</p>
+                   <ul>
+                     <div *ngFor="let recipe of recipes">
+                       <h3>{{recipe.title}}</h3>
+                       <p>{{recipe.ingredients}}</p>
+                       <p>{{recipe.instructions}}</p>
+                       <p>{{recipe.rating}}</p>
+                     </div>
+                   </ul>
                    </div>
                    <div class="modal-footer">
                      <button type="button" class="btn btn-primary" (click)="confirm()">OK</button>
